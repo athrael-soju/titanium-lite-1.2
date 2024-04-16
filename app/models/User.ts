@@ -9,4 +9,8 @@ interface IUser {
   isTextToSpeechEnabled: boolean;
   model: string;
   voice: string;
+
+  // vision
+  isVisionEnabled: boolean;
+  visionId: string;
 }

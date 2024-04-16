@@ -14,6 +14,18 @@ interface ChatFormValues {
   voice: string;
   isTextToSpeechEnabled: boolean;
   isSpeechToTextEnabled: boolean;
+
+  // vision
+  visionId: string;
+  isVisionEnabled: boolean;
+  isVisionDefined: boolean;
+  visionFiles: {
+    id: string;
+    visionId: string;
+    name: string;
+    type: string;
+    url: string;
+  }[];
 }
 
 export const useChatForm = () => {
@@ -24,10 +36,14 @@ export const useChatForm = () => {
       transcript: '',
       model: '',
       voice: '',
+      visionId: '',
       isLoading: false,
       isAssistantEnabled: false,
       isTextToSpeechEnabled: false,
-      isSpeechToTextEnabled: false
+      isSpeechToTextEnabled: false,
+      isVisionEnabled: false,
+      isVisionDefined: false,
+      visionFiles: [] 
     },
   });
 

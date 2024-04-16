@@ -10,7 +10,10 @@ interface UseCustomInputProps {
 export const useCustomInput = ({ onSendMessage }: UseCustomInputProps) => {
   const { data: session } = useSession();
   const [inputValue, setInputValue] = useState('');
-  const [isDialogOpen, setIsDialogOpen] = useState({ speech: false });
+  const [isDialogOpen, setIsDialogOpen] = useState({
+    speech: false,
+    vision: false
+  });
   const { setValue } = useFormContext();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -26,6 +29,19 @@ export const useCustomInput = ({ onSendMessage }: UseCustomInputProps) => {
       setValue('isTextToSpeechEnabled', response.isTextToSpeechEnabled);
       setValue('model', response.model);
       setValue('voice', response.voice);
+    }
+
+    // Prefetch vision data
+    response = await retrieveServices({
+      userEmail,
+      serviceName: 'vision',
+    });
+    if (response.visionId) {
+      setValue('isVisionEnabled', response.isVisionEnabled);
+      setValue('visionFiles', response.visionFileList);
+      setValue('isVisionDefined', true);
+    } else {
+      setValue('isVisionDefined', false);
     }
   }, [session?.user?.email, setValue]);
 

@@ -6,6 +6,7 @@ Titanium is a modern web application built with Next.js, leveraging the latest O
 - Streaming chat - simple chat allowing you to chat with AI in a seamless manner. ✅
 - Speech (TTS) ✅ (Supports tts-1 and tts-1-hd and all available voice models)
 - Speech (STT) ✅ (Available via button toggle in the input chat box)
+- Vision via 'gpt-4-vision-preview'. Currently supports Image Analysis for multiple urls. File uploads may come later, but not a priority.✅
 
 # Libraries
 
@@ -111,6 +112,7 @@ To access the features, you can click the hamburger icon at the left of the inpu
 
 - Streaming Chat
 - Speech
+- Vision
 
 
 ## Streaming Chat
@@ -125,11 +127,18 @@ Streaming Chat is the default mode of chat. It's a simple chat interface that al
 
 Speech comes in two parts: Text to Speech (TTS) and Speech to Text (STT). TTS will allow the AI to generate speech from text, while STT will allow the AI to transcribe speech to text. To use TTS, you can select a model and voice from the dropdown menu. To use STT, you can click the microphone icon at the very left of the input box to record a message. Once done, you can click the microphone icon again to stop recording. The AI will then transcribe the message and you can send it to the AI by pressing enter.
 
+## Vision
+
+![image](https://github.com/athrael-soju/Titanium/assets/25455658/e295197b-53d8-4225-9145-5b94b7079fb4)
+
+Vision will allow a user to add a URL to an image and the AI will analyze the image and provide a response. The response will include a description of the image, as well as any other relevant information, including numerical data. At this point, the feature does not support file uploads, but this may be added in the future.
+
 # Feature Combinations
 
 Some features can play really well together. For example:
 
 - Speech can be used in conjunction with any other feature, allowing you to speak to the AI instead of typing. This can be especially useful if you're on the go or if you have a disability that makes typing difficult.
+- Vision, combined with Text to Speech, as well as Speech to Text, can be a great tool when accessibility is a concern. For example, you can use Vision to analyze an image, verbally ask the AI a question about the image, and then have the AI respond with a verbal answer, as well.
 
 # General Notes
 

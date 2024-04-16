@@ -2,6 +2,7 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SendIcon from '@mui/icons-material/Send';
+import VisionIcon from '@mui/icons-material/Visibility';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useCustomInput } from '@/app/hooks/useCustomInput';
@@ -10,6 +11,7 @@ import { Menu, MenuItem, ListItemIcon, Tooltip } from '@mui/material';
 import { Microphone } from '../Speech/stt';
 import MenuIcon from '@mui/icons-material/Menu';
 import SpeechDialog from '../Speech/tts';
+import VisionDialog from '../Vision';
 
 const CustomizedInputBase = ({
   onSendMessage,
@@ -77,6 +79,12 @@ const CustomizedInputBase = ({
             </ListItemIcon>
             Speech
           </MenuItem>
+          <MenuItem onClick={() => toggleDialog('vision')}>
+            <ListItemIcon>
+              <VisionIcon fontSize="small" />
+            </ListItemIcon>
+            Vision
+          </MenuItem>
         </Menu>
         <InputBase
           sx={{ ml: 1, flex: 1 }}
@@ -99,6 +107,11 @@ const CustomizedInputBase = ({
       <SpeechDialog
         open={isDialogOpen.speech}
         onClose={() => toggleDialog('speech')}
+      />
+
+      <VisionDialog
+        open={isDialogOpen.vision}
+        onClose={() => toggleDialog('vision')}
       />
 
     </>
