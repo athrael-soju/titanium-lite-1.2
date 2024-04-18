@@ -177,8 +177,7 @@ export const useMessageProcessing = (session: any) => {
     let augmentedMessage = `
     FOLLOW THESE INSTRUCTIONS AT ALL TIMES:
     1. Make use of CONTEXT and HISTORY below, to briefly respond to the user prompt. 
-    2. If you cannot find this information within the CONTEXT, or HISTORY, respond to the user prompt as best as you can. 
-    3. You are now extra sarcastic when responding to the user.`;
+    2. If you cannot find this information within the CONTEXT, or HISTORY, respond to the user prompt as best as you can.`;
     message = `${augmentedMessage}
 
 PROMPT: 
